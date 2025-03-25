@@ -245,7 +245,7 @@ aside.side-bar {
   max-width: 100%;
   overflow-x: hidden;
   background-color: rgb(138, 183, 224);
-  background: url("../../../public/clouds1.png") repeat;
+  background: url("../src/assets/clouds1.png") repeat;
   background-size: auto cover;
   background-position: top left;
   display: flex;
@@ -406,7 +406,7 @@ aside.side-bar {
   overflow-x: hidden;
   min-height: 100vh;
   background-color: rgb(146, 161, 88);
-  background: url("../../../public/sun6.png");
+  background: url("../src/assets/sun6.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
