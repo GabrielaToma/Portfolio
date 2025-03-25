@@ -1,0 +1,790 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", serif;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+body,
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#root {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.thebestcontainer {
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+/*home page*/
+
+/*navbar - will not be displayed on larger screens*/
+.navBar {
+  display: none;
+}
+
+/*sidebar - fixed width on larger screens*/
+aside.side-bar {
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  z-index: 4;
+}
+
+.side-bar div.pictureContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.side-bar img.personalPicture {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 4px solid gray;
+}
+
+.side-bar ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  height: 50%;
+  margin-left: 50px;
+}
+
+.side-bar ul .navLink {
+  text-decoration: none;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.side-bar ul .navLink:hover {
+  color: gray;
+}
+
+.side-bar ul .navLink.active {
+  color: rgb(135, 19, 137);
+}
+
+.side-bar ul .navLink.about {
+  color: rgb(158, 32, 90);
+}
+
+.side-bar ul .navLink.projects {
+  color: rgb(104, 128, 224);
+}
+
+.side-bar ul .navLink.contact {
+  color: rgb(202, 155, 47);
+}
+
+.side-bar img.githubIcon {
+  width: 30px;
+  height: 30px;
+}
+
+/*mainContent - general and specific to each component*/
+.mainContent {
+  height: 100vh;
+  flex: 1;
+  margin-left: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  animation: fadeIn 0.9s ease-in-out forwards;
+}
+
+.mainContent div.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 30px;
+  font-weight: 300;
+  z-index: 3;
+  color: white;
+}
+
+.mainContent div.home h1 {
+  font-size: 48px;
+  color: white;
+  font-weight: 200;
+}
+
+.mainContent div.home h2 {
+  font-size: 35px;
+  font-weight: 300;
+  color: rgb(107, 13, 108);
+}
+
+.mainContent div.home .description {
+  text-align: center;
+  background-color: rgb(74, 8, 75);
+  padding: 13px;
+  opacity: 0.8;
+  font-size: 25px;
+  width: 430px;
+  line-height: 32px;
+  font-style: italic;
+  margin-top: 13px;
+  box-shadow: 10px 10px 10px rgba(90, 10, 86, 0.345);
+}
+
+/*about me page*/
+.mainAbout {
+  background-image: linear-gradient(
+    to top,
+    #bd683e,
+    #b3504e,
+    #9d405d,
+    #7d3866,
+    #563567,
+    #423162,
+    #2d2c5b,
+    #152753,
+    #13214d,
+    #111b48,
+    #0f1542,
+    #0d0f3c
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  animation: fadeIn 0.9s ease-in-out forwards;
+  min-height: 100vh;
+}
+
+.containerAbout {
+  height: auto;
+  margin-left: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: black;
+  background-color: white;
+  opacity: 0.7;
+  padding: 18px;
+  width: 65%;
+  text-align: center;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.containerAbout h1 {
+  color: rgb(5, 14, 82);
+  opacity: 0.8;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 32px;
+  display: inline-block;
+  position: relative;
+}
+
+.containerAbout h1::before,
+.containerAbout h1::after {
+  content: "";
+  width: 100px;
+  display: block;
+  height: 1px;
+  background-color: rgb(44, 9, 90);
+  margin: 0 8px;
+  position: absolute;
+  top: 50%;
+}
+
+.containerAbout h1::before {
+  left: -120px;
+}
+
+.containerAbout h1::after {
+  right: -120px;
+}
+
+.containerAbout h3 {
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(19, 7, 77);
+}
+
+.containerAbout span {
+  font-weight: 400;
+}
+
+.containerAbout h4 {
+  font-size: 17px;
+  color: rgb(73, 32, 9);
+}
+
+/*projects page*/
+
+.mainProjects {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-color: rgb(138, 183, 224);
+  background: url("../../../public/clouds1.png") repeat;
+  background-size: auto cover;
+  background-position: top left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-left: 250px;
+  opacity: 0.7;
+  animation: fadeIn 0.9s ease-in-out forwards;
+}
+
+.mainProjects section.project,
+.mainProjects section.rev {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.mainProjects .rev {
+  flex-direction: row-reverse;
+}
+
+.mainProjects .projectDescription {
+  width: 40%;
+}
+
+.mainProjects section.project h2 {
+  font-size: 30px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgb(243, 239, 239);
+  background-color: #040749;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 8px;
+  position: relative;
+  left: 25px;
+  top: 15px;
+  z-index: 2;
+}
+
+.mainProjects section.project .description {
+  color: rgb(42, 41, 41);
+  line-height: 22px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  font-size: 17px;
+  opacity: 0.9;
+  padding: 20px;
+  border-radius: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainProjects section.project .description .links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.mainProjects section.project .description .links a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mainProjects section.project .description .githubIcon {
+  width: 22px;
+}
+
+.projectMedia {
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 435px;
+}
+
+.mainProjects .projectImage1,
+.mainProjects .projectImage2,
+.mainProjects .projectImage1RPS {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.mainProjects .projectImage1 {
+  max-width: 420px;
+  top: 80px;
+  left: 100px;
+  z-index: 1;
+}
+
+.mainProjects .projectImage2 {
+  max-width: 400px;
+  right: 160px;
+  bottom: 90px;
+}
+
+.mainProjects .projectImage1RPS {
+  max-width: 200px;
+}
+
+.mainProjects .projectImage1.uber {
+  max-width: 500px;
+  position: static;
+}
+
+.mainProjects .projectMedia video {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  position: relative;
+  bottom: 60px;
+  right: 140px;
+  z-index: 2;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.mainProjects .projectMedia video.videoAssembly,
+.mainProjects .projectMedia video.videoTenzies {
+  position: static;
+  height: 258px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mainProjects .projectMedia video.videoRPS {
+  max-width: 360px;
+  bottom: 0;
+  right: 60px;
+}
+
+.mainProjects .projectMedia.tenzies {
+  margin-right: 1px;
+}
+
+/*mainContact*/
+.mainContact {
+  flex: 1;
+  margin-left: 250px;
+  min-width: 0;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: rgb(146, 161, 88);
+  background: url("../../../public/sun6.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  animation: fadeIn 0.9s ease-in-out forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContact .contact {
+  width: 80%;
+  min-height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mainContact .contact h2 {
+  font-size: 48px;
+  font-weight: 300;
+  color: rgb(88, 32, 6);
+  border-top: 2px solid rgb(176, 176, 79);
+  border-bottom: 2px solid rgb(176, 176, 79);
+  padding: 8px 0;
+}
+
+.mainContact .contact p {
+  font-size: 18px;
+  color: rgb(97, 41, 4);
+  letter-spacing: 0.7px;
+  text-align: center;
+  margin-block: 13px;
+  width: 80%;
+}
+
+.mainContact .contactForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.mainContact .form-1 {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mainContact label {
+  width: 100%;
+  color: rgb(72, 47, 5);
+  font-weight: 300;
+}
+
+.mainContact .form-1 input {
+  flex: 1;
+  min-width: 180px;
+  width: 100%;
+  min-height: 33px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgb(232, 232, 180);
+  border: 1px solid rgb(53, 43, 4);
+  text-align: start;
+  margin-top: 3px;
+}
+
+.mainContact .form-1 input:focus,
+.mainContact .contactForm textarea:focus {
+  background-color: rgb(221, 221, 120);
+  outline: wheat;
+}
+
+.mainContact .contactForm textarea {
+  width: 100%;
+  max-width: 250px;
+  min-width: 180px;
+  min-height: 80px;
+  border-radius: 5px;
+  background-color: rgb(232, 232, 180);
+  border: 1px solid rgb(53, 43, 4);
+  line-height: 20px;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-left: 5px;
+  resize: none;
+}
+
+.mainContact button {
+  padding: 10px 13px;
+  background-color: rgb(220, 199, 94);
+  color: rgb(47, 47, 21);
+  border: 2px solid rgb(128, 105, 3);
+  border-radius: 4px;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.mainContact button:hover {
+  background-color: rgb(193, 163, 41);
+  border: 2px solid rgb(182, 193, 38);
+  color: rgb(56, 30, 30);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 660px) {
+  .projectMedia {
+    min-height: 320px;
+  }
+
+  .projectMedia.library {
+    flex-direction: column-reverse;
+  }
+
+  .projectMedia.library img {
+    max-width: 330px;
+    position: static;
+  }
+
+  .projectMedia.library video {
+    max-width: 380px;
+    bottom: 0;
+    right: 0;
+    top: 40px;
+  }
+
+  .projectMedia.museumOfCandy {
+    flex-direction: column;
+  }
+
+  .projectMedia.museumOfCandy .projectImage1 {
+    top: 20px;
+    left: 0;
+    max-width: 450px;
+  }
+
+  .projectMedia.museumOfCandy .projectImage2 {
+    position: static;
+    max-width: 420px;
+  }
+
+  .projectMedia.rps {
+    flex-direction: column-reverse;
+  }
+
+  .projectMedia.rps img {
+    bottom: 20px;
+  }
+
+  .projectMedia.rps video {
+    position: static;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  /*home page*/
+  /*navbar*/
+  .navBar {
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background-color: black;
+    z-index: 5;
+  }
+
+  .navBar > h3 {
+    font-size: 18px;
+    margin-left: 15px;
+    font-weight: 300;
+  }
+
+  .navBar img.githubIcon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .navBar button {
+    background-color: black;
+    border: none;
+  }
+
+  .navBar button img.hamburgerIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+
+  /*sidebar - its display will be controlled by the button, through the 'left' property*/
+  .side-bar {
+    width: 250px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    left: -250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: left 0.5s ease-in-out;
+  }
+
+  .side-bar.open {
+    left: 0;
+    background-color: black;
+  }
+
+  /*mainContent - general and specific to each component*/
+
+  .mainContent {
+    margin-left: 0;
+  }
+
+  .mainContent div.home {
+    gap: 50px;
+  }
+
+  .mainContent div.home h1 {
+    font-size: 28px;
+  }
+
+  /*about me page*/
+
+  .mainAbout {
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .containerAbout {
+    margin-left: 0;
+    width: 80%;
+    min-height: 100%;
+  }
+
+  .containerAbout h1 {
+    font-size: 30px;
+    border-bottom: 2px solid rgb(196, 190, 190);
+  }
+
+  .containerAbout h1::before,
+  .containerAbout h1::after {
+    content: none;
+  }
+
+  .containerAbout .about {
+    width: 90%;
+  }
+
+  /*projects*/
+  .mainProjects {
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+
+  .mainProjects div.projectDescription {
+    padding: 0;
+  }
+
+  .mainProjects div.projectMedia {
+    padding: 0 20px;
+  }
+
+  .mainProjects div.projectMedia.assembly {
+    padding: 15px 10px;
+  }
+
+  /*contact*/
+  .mainContact {
+    margin-left: 0;
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .mainContact .contact {
+    min-height: 100%;
+    width: 100%;
+  }
+  .mainContact .form-1 {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  /*projects*/
+  .mainProjects {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .mainProjects section.project {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+    gap: 20px;
+  }
+
+  .mainProjects .projectDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-right: 25px;
+    max-width: 100%;
+  }
+
+  .mainProjects .projectMedia {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .mainProjects section.project h2 {
+    left: 0;
+  }
+
+  .mainProjects div.projectMedia.assembly,
+  .mainProjects div.projectMedia.tenzies {
+    padding: 15px 10px;
+  }
+}
+
+@keyframes move-twinkling {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.stars {
+  background: #000 url(assets/stars.png) repeat top center;
+  z-index: -2;
+}
+
+.twinkling {
+  background: transparent url(assets/twinkling.png) repeat top center;
+  z-index: -1;
+  animation: move-twinkling 200s linear infinite;
+}
+
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.7;
+  }
+  to {
+    opacity: 1;
+  }
+}
