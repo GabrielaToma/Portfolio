@@ -1,12 +1,30 @@
 import { useState } from "react";
-import { useForm } from "@formspree/react";
 
 export default function Contact() {
   const [status, setStatus] = useState("");
-  const [state, handleSubmit] = useForm("mldjllwz");
-  if (state.succeeded) {
-    return <p>thanks</p>;
-  }
+  const [buttonState, setButtonState] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const response = await fetch("https://formspree.io/f/mldjllwz", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+      body: formData,
+    });
+
+    if (response.ok) {
+      setStatus("Your message was delivered!");
+      form.reset();
+      setButtonState(true);
+    } else {
+      setStatus("Something went wrong, please try again later.");
+    }
+  };
 
   return (
     <main className="mainContact">
@@ -51,8 +69,10 @@ export default function Contact() {
             name="message"
             required
           ></textarea>
-          <button type="submit">Send message</button>
-          <p>{status}</p>
+          <button type="submit" className={buttonState && "messageSent"}>
+            {buttonState ? "Message sent!" : "Send message"}
+          </button>
+          <p className="emailResponse">{status}</p>
         </form>
       </div>
     </main>

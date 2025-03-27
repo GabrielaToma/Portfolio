@@ -507,10 +507,16 @@ aside.side-bar {
   padding: 10px 13px;
   background-color: rgb(220, 199, 94);
   color: rgb(47, 47, 21);
-  border: 2px solid rgb(128, 105, 3);
+  border: 2px solid rgb(183, 157, 42);
   border-radius: 4px;
   font-size: 15px;
   transition: 0.5s;
+}
+
+.mainContact button.messageSent {
+  background-color: rgb(86, 152, 86);
+  border: 2px solid rgb(140, 201, 140);
+  color: rgb(236, 234, 234);
 }
 
 .mainContact button:hover {
@@ -518,6 +524,18 @@ aside.side-bar {
   border: 2px solid rgb(182, 193, 38);
   color: rgb(56, 30, 30);
   cursor: pointer;
+}
+
+.mainContact button.messageSent:hover {
+  background-color: rgb(86, 152, 86);
+  border: 2px solid rgb(140, 201, 140);
+  color: rgb(236, 234, 234);
+  cursor: default;
+}
+
+.mainContact p.emailResponse {
+  margin-top: -10px;
+  color: rgb(15, 101, 15);
 }
 
 @media only screen and (max-width: 660px) {
