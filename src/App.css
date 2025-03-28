@@ -10,18 +10,21 @@ body {
 }
 
 body,
-html,
-#root {
+html {
   max-width: 100vw;
   overflow-x: hidden;
-  min-height: 100%;
+  height: 100%;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 .thebestcontainer {
   display: flex;
   width: 100vw;
   overflow-x: hidden;
-  min-height: 100%;
+  height: 100%;
 }
 
 /*home page*/
@@ -102,7 +105,6 @@ aside.side-bar {
 
 /*home section*/
 .mainContent {
-  min-height: 100vh;
   flex: 1;
   margin-left: 250px;
   display: flex;
@@ -114,6 +116,7 @@ aside.side-bar {
 }
 
 .mainContent div.home {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -818,7 +821,7 @@ aside.side-bar {
   right: 0;
   bottom: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: block;
 }
 
