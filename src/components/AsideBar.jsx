@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import me from "../assets/eu2.jpg";
+import me from "../assets/eu2.jpeg";
 import githubIcon from "../assets/githubIcon.jpg";
 
 export default function AsideBar(props) {
