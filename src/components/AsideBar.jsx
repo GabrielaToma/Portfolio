@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import duckImage from "../assets/duck.jpg";
+import me from "../assets/eu2.jpg";
 import githubIcon from "../assets/githubIcon.jpg";
 
 export default function AsideBar(props) {
@@ -22,13 +22,34 @@ export default function AsideBar(props) {
     }
   }
 
+  //Function to determine the border of the image
+
+  function getBorder() {
+    switch (location.pathname) {
+      case "/":
+        return "rgb(86, 5, 86)";
+      case "/about":
+        return "rgb(146, 25, 14)";
+      case "/projects":
+        return "rgb(84, 105, 175)";
+      case "/contact":
+        return "rgb(227, 178, 99)";
+      default:
+        return "rgb(250, 248, 250)";
+    }
+  }
+
   return (
     <aside
       className={`side-bar ${props.display ? "open" : ""}`}
       style={{ boxShadow: getAsideBarShadow() }}
     >
       <div className="pictureContainer">
-        <img className="personalPicture" src={duckImage}></img>
+        <img
+          style={{ borderColor: getBorder() }}
+          className="personalPicture"
+          src={me}
+        ></img>
       </div>
       <ul>
         <li>

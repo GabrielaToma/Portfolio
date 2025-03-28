@@ -10,25 +10,21 @@ body {
 }
 
 body,
-html {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
+html,
 #root {
   max-width: 100vw;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100%;
 }
 
 .thebestcontainer {
   display: flex;
   width: 100vw;
   overflow-x: hidden;
-  height: 100%;
+  min-height: 100%;
 }
-/*home page*/
 
+/*home page*/
 /*navbar - will not be displayed on larger screens*/
 .navBar {
   display: none;
@@ -60,6 +56,7 @@ aside.side-bar {
   height: 200px;
   border-radius: 100px;
   border: 4px solid gray;
+  object-fit: cover;
 }
 
 .side-bar ul {
@@ -75,7 +72,7 @@ aside.side-bar {
   text-decoration: none;
   color: whitesmoke;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 .side-bar ul .navLink:hover {
@@ -103,9 +100,9 @@ aside.side-bar {
   height: 30px;
 }
 
-/*mainContent - general and specific to each component*/
+/*home section*/
 .mainContent {
-  height: 100vh;
+  min-height: 100vh;
   flex: 1;
   margin-left: 250px;
   display: flex;
@@ -113,6 +110,7 @@ aside.side-bar {
   align-items: center;
   opacity: 0.7;
   animation: fadeIn 0.9s ease-in-out forwards;
+  max-width: 100%;
 }
 
 .mainContent div.home {
@@ -150,6 +148,7 @@ aside.side-bar {
   font-style: italic;
   margin-top: 13px;
   box-shadow: 10px 10px 10px rgba(90, 10, 86, 0.345);
+  max-width: 100vw;
 }
 
 /*about me page*/
@@ -269,10 +268,16 @@ aside.side-bar {
   align-items: center;
   gap: 20px;
   margin-bottom: 50px;
+  padding-right: 45px;
 }
 
 .mainProjects .rev {
   flex-direction: row-reverse;
+}
+
+.mainProjects section.project.ol,
+.mainProjects section.project.rps {
+  padding-right: 0;
 }
 
 .mainProjects .projectDescription {
@@ -587,7 +592,7 @@ aside.side-bar {
   }
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 870px) {
   /*home page*/
   /*navbar*/
   .navBar {
@@ -648,7 +653,7 @@ aside.side-bar {
     background-color: black;
   }
 
-  /*mainContent - general and specific to each component*/
+  /*home*/
 
   .mainContent {
     margin-left: 0;
@@ -687,7 +692,7 @@ aside.side-bar {
   }
 
   .containerAbout .about {
-    width: 90%;
+    width: 85%;
   }
 
   /*projects*/
@@ -698,10 +703,12 @@ aside.side-bar {
 
   .mainProjects div.projectDescription {
     padding: 0;
+    width: 80%;
   }
 
   .mainProjects div.projectMedia {
     padding: 0 20px;
+    width: 100%;
   }
 
   .mainProjects div.projectMedia.assembly {
@@ -733,12 +740,14 @@ aside.side-bar {
     padding-right: 0;
   }
 
-  .mainProjects section.project {
+  .mainProjects section.project,
+  .mainProjects section.project.rev {
     max-width: 100%;
     flex-direction: column;
     justify-content: center;
     padding-left: 0;
     gap: 20px;
+    padding-right: 0;
   }
 
   .mainProjects .projectDescription {
@@ -746,16 +755,31 @@ aside.side-bar {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    padding-right: 25px;
+    width: 75%;
     max-width: 100%;
   }
 
   .mainProjects .projectMedia {
     padding-right: 0;
     margin-right: 0;
+    width: 100%;
   }
 
+  .mainProjects .projectMedia.library .projectImage1 {
+    max-width: 380px;
+  }
+
+  .mainProjects .projectMedia.library video {
+    max-width: 380px;
+  }
+
+  .mainProjects .projectMedia.museumOfCandy .projectImage1 {
+    max-width: 380px;
+  }
+
+  .mainProjects .projectMedia.museumOfCandy .projectImage2 {
+    max-width: 380px;
+  }
   .mainProjects section.project h2 {
     left: 0;
   }

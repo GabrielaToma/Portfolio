@@ -4,7 +4,7 @@ import githubIcon from "../../assets/github-logo.png";
 
 export default function RockPaperScissors() {
   return (
-    <section className="project">
+    <section className="project rps">
       <div className="projectDescription">
         <h2>Rock, paper, scissors?</h2>
         <div className="description">

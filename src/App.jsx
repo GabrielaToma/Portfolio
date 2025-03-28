@@ -3,12 +3,14 @@ import "./App.css";
 import { Routes, Route, BrowserRouter } from "react-router";
 import AsideBar from "./components/AsideBar";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Home from "./components/AsideBarPages/Home";
+import About from "./components/AsideBarPages/About";
+import Projects from "./components/AsideBarPages/Projects";
+import Contact from "./components/AsideBarPages/Contact";
 
 function App() {
+  /*clicking on the NavBar switches asideBarDisplay value 
+  - when asideBarDisplay is true, the side-bar will receive the className "open"*/
   const [asideBarDisplay, setAsideBarDisplay] = React.useState(false);
 
   function setDisplay() {
@@ -34,16 +36,3 @@ function App() {
 }
 
 export default App;
-/**
- * 1. cand marimea ferestrei e sub 700 de px:
- * navbarul va avea display block
- * butonul va avea content liniile daca displayDropdown menu e fals/ x daca e true
- * va exista un displayDropdownMenu state setat pe fals
- * click pe buton va seta pe true displayDropdownMenu
- * cand displayDropdownMenu e true, asidebar-ul e vizibil
- *
- * 2. cand marimea ferestrei e peste 700px:
- * navbarul va avea display none
- * aside bar-ul va avea margin-left: 0 (initial o sa fie -250px sau ce width o avea)
- *
- */
